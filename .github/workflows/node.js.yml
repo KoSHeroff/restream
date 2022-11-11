@@ -28,5 +28,13 @@ jobs:
     - name: Install dependencies Back
       run: cd back && npm install
 
+    - name: Add .env
+      run: touch back/.env
+      run: echo "BASE_HOST: ${{ env.BASE_HOST }}" >> back/.env
+      run: echo "BASE_PORT: ${{ env.BASE_PORT }}" >> back/.env
+      run: echo "BASE_USER: ${{ env.BASE_USER }}" >> back/.env
+      run: echo "BASE_PASS: ${{ env.BASE_PASS }}" >> back/.env
+      run: echo "BASE_BASE: ${{ env.BASE_BASE }}" >> back/.env
+
     - name: Run test back
       run: cd back && npm run test
