@@ -31,11 +31,12 @@ jobs:
     - name: Add .env
       run: |
         touch back/.env
-        echo "BASE_HOST: ${{ env.BASE_HOST }}" > back/.env
-        echo "BASE_PORT: ${{ env.BASE_PORT }}" > back/.env
-        echo "BASE_USER: ${{ env.BASE_USER }}" > back/.env
-        echo "BASE_PASS: ${{ env.BASE_PASS }}" > back/.env
-        echo "BASE_BASE: ${{ env.BASE_BASE }}" > back/.env
+        echo "BASE_HOST=${{ env.BASE_HOST }}" > back/.env
+        echo "BASE_PORT=${{ env.BASE_PORT }}" > back/.env
+        echo "BASE_USER=${{ env.BASE_USER }}" > back/.env
+        echo "BASE_PASS=${{ env.BASE_PASS }}" > back/.env
+        echo "BASE_BASE=${{ env.BASE_BASE }}" > back/.env
+        cat .env
 
     - name: Run test back
       run: cd back && npm run test
