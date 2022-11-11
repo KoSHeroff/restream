@@ -19,20 +19,14 @@ jobs:
       with:
         node-version: '18.x'
     
-    - name: Go Front
-      run: cd front
-    
     - name: Install dependencies Front
-      run: npm install
+      run: cd front && npm install
 
     - name: Test front
-      run: npm run build
-
-    - name: Go back
-      run: cd ../back
+      run: cd front && npm run build
 
     - name: Install dependencies Back
-      run: npm install
+      run: cd back && npm install
 
     - name: Run test back
-      run: npm run test
+      run: cd back && npm run test
