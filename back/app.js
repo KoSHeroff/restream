@@ -9,7 +9,6 @@ const app = Express()
 
 app.use(cors())
 
-
 app.get('/', (req, res) => {
     res.send('Hello world')
 })
@@ -21,7 +20,4 @@ app.use((req, res) => {
     res.status(404).end()
 })
 
-app.listen(process.env.SERVICE_PORT, '127.0.0.1', (err) => {
-    if (err) return console.log('🔥 Service not started')
-    console.log(`⚡️ Service started on ${process.env.SERVICE_PORT} port`)
-})
+export default app

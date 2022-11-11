@@ -11,4 +11,5 @@ const base = knex({
     }
 })
 
+// console.log(await base.context.destroy())
 export default base
