@@ -5,19 +5,29 @@ import base from "../utils/base.js";
 const route = Router()
 
 route.get('/', async (req, res) => {
-    const reStreams = await base.from('relaying').select();
+    try {
+        const reStreams = await base.from('relaying').select();
 
-    return res.send(reStreams)
+        return res.send(reStreams)
+    } catch(e) {
+        res.status(500).end()
+    }
+    
 })
 
 route.get('/:id', async (req, res) => {
-    const {
-        id
-    } = req.params;
-
-    const reStreams = await base.from('relaying').select().where('app_id', id)
-
-    return res.send(reStreams)
+    try {
+        const {
+            id
+        } = req.params;
+    
+        const reStreams = await base.from('relaying').select().where('app_id', id)
+    
+        return res.send(reStreams)
+    } catch(e) {
+        res.status(500).end()
+    }
+    
 })
 
 export default route
