@@ -21,6 +21,9 @@ jobs:
     
     - name: Go Front
       run: cd front
+    
+    - name: Install dependencies Front
+      run: npm install
 
     - name: Test front
       run: npm run build
@@ -28,8 +31,8 @@ jobs:
     - name: Go back
       run: cd ../back
 
-    - name: Install dependencies
+    - name: Install dependencies Back
       run: npm install
 
-    - name: Run test
+    - name: Run test back
       run: npm run test
