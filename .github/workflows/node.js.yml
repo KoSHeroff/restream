@@ -22,7 +22,7 @@ jobs:
     - name: Go Front
       run: cd front
 
-    name: Test front
+    - name: Test front
       run: npm run build
 
     - name: Go back
