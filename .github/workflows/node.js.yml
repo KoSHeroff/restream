@@ -39,27 +39,3 @@ jobs:
 
     - name: Run test back
       run: cd back && npm run test
-  
-  # push:
-  #   runs-on: self-hosted
-
-  #   steps:
-  #     - name: Update local rep
-  #       run: cd /var/www/web/ && git pull
-
-  #     - name: Update local .env back
-  #       run: |
-  #         echo BASE_HOST=${{ secrets.BASE_HOST }} >> /var/www/web/back/.env
-  #         echo BASE_PORT=${{ secrets.BASE_PORT }} >> /var/www/web/back/.env
-  #         echo BASE_USER=${{ secrets.BASE_USER }} >> /var/www/web/back/.env
-  #         echo BASE_PASS=${{ secrets.BASE_PASS }} >> /var/www/web/back/.env
-  #         echo BASE_BASE=${{ secrets.BASE_BASE }} >> /var/www/web/back/.env
-      
-  #     - name: Update dependencies Back
-  #       run: /var/www/web/back/ && npm install
-      
-  #     - name: Update dependencies Front
-  #       run: /var/www/web/front/ && npm install
-      
-  #     - name: Build front
-  #       run: /var/www/web/front/ && npm run build
